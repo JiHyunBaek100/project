@@ -20,4 +20,5 @@ from restapi import views as restapiview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',restapiview.home, name='home'),
+    
 ]
