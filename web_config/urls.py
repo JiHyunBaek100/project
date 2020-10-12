@@ -20,7 +20,8 @@ from restapi import views as restapiview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',restapiview.home, name='home'),
-
+    path('restapi/responsewithhtml.html',restapiview.responsewithhtml),
+    path('restapi/form/',restapiview.form,name='restapiform'),
 ]
 
 
