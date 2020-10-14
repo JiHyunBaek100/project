@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from restapi import views as restapiview
+from proj import views as projview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',restapiview.home, name='home'),
     path('restapi/responsewithhtml.html',restapiview.responsewithhtml),
     path('restapi/form/',restapiview.form,name='restapiform'),
+    path('restapi/template/', restapiview.template, name='template'),
+    path('proj/mongolist',projview.mongolist,name='mongolist'),
+    
 ]
 
 
