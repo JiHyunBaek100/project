@@ -10,8 +10,11 @@ client=MongoClient()
 
 client= MongoClient('localhost',27017)
 
-db=client['prodb']
-coll=db['prodb']
+# DB 이름
+db=client['jhdb2']
+
+# DB 이름 coll
+coll=db['jhdb2']
 
 options = Options()
 options.headless = True
@@ -39,18 +42,14 @@ for i in data:
 for i in company:
     comp.append(i.text)
 
+coll=db.collection2
 data={}
+key = ['company','jobs','pay']
 for value in zip(comp, aa, payl):
-    key = ['company','jobs','pay']
     for k,v in zip(key,value):
         data[k]=v
-    print(data)
+        print(data)
+        coll.insert(data)
+result=coll.find()
 
-# doc={"first":data.text}
-# coll=db.collection
-# coll.insert(doc)
 
-# result=coll.find()
-# for i in result:
-#     print(i)
-# print(data_list.text)
